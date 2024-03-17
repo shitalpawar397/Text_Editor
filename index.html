@@ -7,25 +7,33 @@
 	<link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
-	<!-- <h1 align="center" class="heading">TEXT BOX</h1> -->
+	<h1 align="center" class="heading">TEXT BOX</h1>
 	
-	<marquee class="make"> TEXT EDITOR </marquee>
+	<!-- <marquee class="make"> TEXT EDITOR </marquee> -->
 	
 
-	<div align="center">
+	<div class="mdiv">
+		
+		<div align="center" class="sdiv">
 		<form class="textform">
 			<label>Enter your text below</label><br><br>
-			<textarea id="text" rows="10" cols="60" onkeyup="updateInfo()" autofocus style="padding: 10px;"></textarea><br><br>
+			<textarea id="text" rows="10" cols="50" onkeyup="updateInfo()" autofocus style="padding: 10px;"></textarea><br><br>
 			<button type="button" onclick="transFormToUpperCase()"> UPPERCASE </button>
 			<button type="button" onclick="transFormToLowerCase()">LOWERCASE</button>
 			<button type="button" onclick="changeColor()">COLOR</button>
 			<button type="button" onclick="findText()">FIND</button>
-			<button type="button" onclick="textUnderline()">UNDERLINE</button>
-			<button type="button" onclick="copyText()">COPY</button><br><br>
+			<button type="button" onclick="textUnderline()">UNDERLINE</button><br><br>
+			<button type="button" onclick="copyText()">COPY</button>
+			<button type="button" onclick="boldText()">BOLD</button>
+			<button type="button" onclick="italicText()">ITALIC</button>
+			<button type="button" onclick="justifyText()">JUSTIFY</button><br><br>
 
 			<h2 id="textinfo"> This text contains 0 words and 0 characters .</h2>
 		</form>
+		</div>
+
 	</div>
+
 
 	<script type="text/javascript">
 		let text  = document.getElementById("text");
@@ -68,6 +76,16 @@
 			let numberOfWords = text.value.trim().split(" ").length;
 			textInfo.innerHTML = `This text contains ${numberOfWords} words and ${text.value.length} charachers`
 		}
+		function boldText(){
+			text.style.fontWeight = 'bold'; 
+		}
+		function italicText(){
+			text.style.fontStyle = 'italic'; 
+		}
+		function justifyText(){
+			text.style.textAlign = 'justify'; 
+		}
+
 	</script>
 
 </body>
